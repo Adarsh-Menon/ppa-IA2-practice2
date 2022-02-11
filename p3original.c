@@ -8,23 +8,16 @@ int input(){
 }
 
 int comp(int n){
-  float total;
-  int composite=0;
-  for(int i=1; i<=n; i++){
-    total=n/i;
-    if (total==0 || total>=1){
-      composite=composite+1;
-    }
-    else{
-        return composite;
-        }
+  for(int i = 2; i <= n/2; i++){
+    if(n%i==0)
+       return 1;
   }
-  printf("%d",composite);
+  return 0;
   }
 
 
 void output(int n,int composite){
-  if (composite>2){
+  if (composite){
     printf("%d is composite number",n);
   }
   else{
